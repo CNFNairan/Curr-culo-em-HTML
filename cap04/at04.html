@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recursos Multimídia — Cap. 4 / Ativ. 4</title>
+  </head>
+  <body>
+    <header>
+      <h1>Recursos Multimídia — Programação Web 1</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Aula em Vídeo</h2>
+        <figure>
+          <video
+            controls
+            width="800"
+            height="450"
+            poster="poster-aula.jpg"
+            preload="metadata"
+          >
+            <source src="videos/aula-html.mp4" type="video/mp4" />
+            <source src="videos/aula-html.webm" type="video/webm" />
+            <track
+              kind="subtitles"
+              src="legendas/aula-html.vtt"
+              srclang="pt"
+              label="Português"
+              default
+            />
+            <p>
+              Seu navegador não suporta vídeo HTML5.
+              <a href="videos/aula-html.mp4">Baixe o vídeo aqui</a>.
+            </p>
+          </video>
+          <figcaption>
+            Vídeo 1 — Introdução ao HTML Semântico. Produção própria, IFAL,
+            2026.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Podcast da Disciplina</h2>
+        <figure>
+          <audio controls preload="metadata">
+            <source src="audios/podcast-ep1.mp3" type="audio/mpeg" />
+            <source src="audios/podcast-ep1.ogg" type="audio/ogg" />
+            <p>
+              Seu navegador não suporta o elemento de áudio.
+              <a href="audios/podcast-ep1.mp3">Baixe o áudio aqui</a>.
+            </p>
+          </audio>
+          <figcaption>
+            Episódio 1: A história da Web.
+            <a href="transcricao.html">Acesse a transcrição do episódio</a>.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Material Complementar Externo</h2>
+        <figure>
+          <iframe
+            width="800"
+            height="450"
+            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+            title="Vídeo Educacional do YouTube"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+          >
+          </iframe>
+          <figcaption>
+            Vídeo Complementar: Como a Internet Funciona (Hospedado no YouTube).
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Banner Responsivo do Curso</h2>
+        <figure>
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/banner-wide.jpg" />
+            <img
+              src="img/banner-mobile.jpg"
+              alt="Banner oficial do curso de Sistemas de Informação do IFAL"
+              width="400"
+              height="200"
+            />
+          </picture>
+          <figcaption>
+            Banner da disciplina: adaptável para dispositivos móveis e desktops.
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Atividade 4 — Capítulo 4 | Programação Web 1 | Aluno: Cauê Nairan
+        Ferreira | Matrícula: [SUA MATRÍCULA AQUI] |
+        <time datetime="2026-04-30">Abril de 2026</time>
+      </p>
+      <p><a href="../index.html">← Voltar à página principal</a></p>
+    </footer>
+  </body>
+</html>

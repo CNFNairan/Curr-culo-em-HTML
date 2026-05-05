@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PWEB1 - Cap. 05 AT02 - Cadastro de Usuário</title>
+  </head>
+  <body>
+    <header>
+      <h1>Cadastro de Usuário</h1>
+      <p><a href="../index.html">← Voltar para a página principal</a></p>
+    </header>
+    <main>
+      <form action="https://httpbin.org/post" method="POST">
+        <div>
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" required minlength="3" />
+        </div>
+        <div>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="senha">Senha:</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            required
+            minlength="8"
+          />
+        </div>
+        <div>
+          <label for="nascimento">Data de nascimento:</label>
+          <input type="date" id="nascimento" name="nascimento" required />
+        </div>
+
+        <fieldset>
+          <legend>Gênero</legend>
+          <input type="radio" id="gen_masc" name="genero" value="masculino" />
+          <label for="gen_masc">Masculino</label>
+
+          <input type="radio" id="gen_fem" name="genero" value="feminino" />
+          <label for="gen_fem">Feminino</label>
+
+          <input type="radio" id="gen_outro" name="genero" value="outro" />
+          <label for="gen_outro">Outro</label>
+
+          <input
+            type="radio"
+            id="gen_pref"
+            name="genero"
+            value="prefiro_nao_informar"
+          />
+          <label for="gen_pref">Prefiro não informar</label>
+        </fieldset>
+
+        <div>
+          <input
+            type="checkbox"
+            id="aceite"
+            name="aceite"
+            value="sim"
+            required
+          />
+          <label for="aceite">Aceito os termos de uso</label>
+        </div>
+
+        <div>
+          <button type="submit">Criar conta</button>
+          <button type="reset">Limpar campos</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
