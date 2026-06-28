@@ -1,0 +1,345 @@
+/* ==========================================================================
+   CSS MOBILE-FIRST - CAPÍTULO 10 DESIGN RESPONSIVO
+   ========================================================================== */
+
+/* --- 1. DESIGN TOKENS (Variáveis Globais) --- */
+:root {
+  /* Tema Padrão: Light Mode */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-header: #000000;
+  --text-main: #191919;
+  --text-muted: #6a6a6a;
+  --text-light: #ffffff;
+  --color-brand: #1ed760;
+  --color-brand-hover: #1fdf64;
+
+  --font-family: "Montserrat", sans-serif;
+  --container-max-width: 1200px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- 2. PREFERS-COLOR-SCHEME (Suporte Obrigatório a Dark Mode) --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #121212;
+    --bg-secondary: #181818;
+    --bg-header: #000000;
+    --text-main: #f6f6f6;
+    --text-muted: #b3b3b3;
+    --text-light: #ffffff;
+  }
+}
+
+/* --- 3. RESET E REGRAS TÉCNICAS MANDATÓRIAS --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  transition: background-color var(--transition-smooth);
+}
+
+/* Regra Obrigatória para Imagens Responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- 4. ESTILOS BASE - MOBILE FIRST (Telas Pequenas) --- */
+
+/* Header & Nav */
+.header {
+  background-color: var(--bg-header);
+  color: var(--text-light);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--text-light);
+}
+
+.header__logo svg {
+  color: var(--color-brand);
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.nav__link {
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0.75;
+  transition: var(--transition-smooth);
+}
+
+.nav__link:hover {
+  opacity: 1;
+  color: var(--color-brand);
+}
+
+.nav__item--divisor {
+  display: none; /* Escondido no mobile */
+}
+
+.nav__link--destaque {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #5038a0;
+  background-image: linear-gradient(135deg, #5038a0 0%, #130c25 100%);
+  color: var(--text-light);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tipografia fluida obrigatória com clamp() */
+.hero__title {
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.hero__btn {
+  display: inline-block;
+  background-color: var(--color-brand);
+  color: #000000;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: var(--transition-smooth);
+}
+
+.hero__btn:hover {
+  background-color: var(--color-brand-hover);
+  transform: scale(1.04);
+}
+
+/* Seções de Conteúdo e Grid de Cards */
+.content-section {
+  padding: 3rem 1.5rem;
+}
+
+.content-section__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.content-section__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* Layout de Cards - Base Mobile (1 Coluna usando Grid) */
+.grid-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  background-color: rgba(150, 150, 150, 0.1);
+  transform: translateY(-4px);
+}
+
+.card__image-wrapper {
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card__text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Footer */
+.footer {
+  background-color: #000000;
+  color: #a7a7a7;
+  padding: 3rem 1.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+  border-top: 1px solid #282828;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer__author {
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES - BREAKPOINTS PROGRESSIVOS (min-width)
+   ========================================================================== */
+
+/* --- BREAKPOINT 1: 576px (Smartphones Grandes / Mini-Tablets) --- */
+@media (min-width: 576px) {
+  .grid-cards {
+    grid-template-columns: repeat(2, 1fr); /* Transiciona para 2 colunas */
+  }
+}
+
+/* --- BREAKPOINT 2: 768px (Tablets e Telas Médias) --- */
+@media (min-width: 768px) {
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav {
+    width: auto;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .nav__link--destaque {
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+  }
+
+  .nav__item--divisor {
+    display: block;
+    opacity: 0.3;
+  }
+
+  /* Modificador específico para botão de entrada destacado no topo */
+  .nav__list .nav__item:last-child .nav__link {
+    background-color: var(--text-light);
+    color: #000000;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    opacity: 1;
+  }
+
+  .nav__list .nav__item:last-child .nav__link:hover {
+    transform: scale(1.04);
+    background-color: #f0f0f0;
+  }
+
+  .hero {
+    padding: 6rem 2rem;
+  }
+
+  .grid-cards {
+    grid-template-columns: repeat(3, 1fr); /* Transiciona para 3 colunas */
+  }
+
+  .footer__container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+
+/* --- BREAKPOINT 3: 1024px (Laptops e Desktops) --- */
+@media (min-width: 1024px) {
+  .header {
+    padding: 1.25rem 3rem;
+  }
+
+  .hero {
+    padding: 8rem 2rem;
+  }
+
+  .content-section {
+    padding: 4rem 3rem;
+  }
+
+  .grid-cards {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* Layout final: 4 colunas em grid fluido */
+    gap: 2rem;
+  }
+}

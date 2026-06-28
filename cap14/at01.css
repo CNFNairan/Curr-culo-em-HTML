@@ -1,0 +1,185 @@
+/* Variáveis CSS para facilitar a troca de temas */
+:root {
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --primary-color: #2c3e50; /* Usado para os títulos h2 */
+  --header-bg: #2c3e50; /* Variável exclusiva para o header */
+  --accent-color: #3498db;
+  --button-hover: #2980b9;
+}
+
+/* Tema Escuro */
+.tema-escuro {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --card-bg: #2d2d2d;
+  --primary-color: #ffffff; /* Títulos ficam brancos */
+  --header-bg: #111111; /* Fundo do header fica quase preto */
+  --accent-color: #e74c3c;
+  --button-hover: #c0392b;
+}
+
+/* Tema Azul */
+.tema-azul {
+  --bg-color: #ebf5fb;
+  --text-color: #154360;
+  --card-bg: #d6eaf8;
+  --primary-color: #1a5276;
+  --header-bg: #1a5276;
+  --accent-color: #2874a6;
+  --button-hover: #1f618d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  padding-bottom: 2rem;
+}
+
+header {
+  background-color: var(--header-bg); /* Agora usa a variável correta */
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card h2 {
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Classe de Destaque (Funcionalidade 4) */
+.perfil-destaque {
+  transform: scale(1.02);
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 8px 15px var(--accent-color);
+}
+
+#foto-perfil {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+}
+
+.info p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.acoes-perfil button,
+#btn-atualizar-contato {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.7rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.acoes-perfil button:hover,
+#btn-atualizar-contato:hover {
+  background-color: var(--button-hover);
+}
+
+.controle {
+  margin-bottom: 1rem;
+}
+
+.controle label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+select,
+input[type="range"],
+input[type="email"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#texto-biografia {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 16px; /* Tamanho inicial padrão */
+}
+
+.form-grupo {
+  margin-bottom: 1rem;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.resumo-contato {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.stats {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+.stats h2 {
+  color: #fff;
+  border-color: #fff;
+}

@@ -1,0 +1,206 @@
+/* =========================================================
+   PROJETO CSS ZEN GARDEN - TEMA CYBERPUNK
+   Uso focado em CSS Grid, Flexbox e Variáveis (Custom Properties)
+========================================================= */
+
+/* --- 1. VARIÁVEIS CSS (:root) --- */
+:root {
+  --bg-dark: #0a0a12;
+  --bg-panel: #141423;
+  --text-main: #a3a3c2;
+  --text-light: #ffffff;
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ea;
+
+  --font-texto: "Inter", sans-serif;
+  --font-destaque: "Fira Code", monospace;
+
+  --espaco-sm: 0.8rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 3rem;
+
+  --border-radius: 8px;
+  --glow-blue: 0 0 10px rgba(0, 243, 255, 0.5);
+  --glow-pink: 0 0 10px rgba(255, 0, 234, 0.5);
+}
+
+/* --- RESET BÁSICO --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Tipografia Geral */
+h1,
+h2,
+h3 {
+  font-family: var(--font-destaque);
+  color: var(--text-light);
+  margin-bottom: var(--espaco-sm);
+}
+
+a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--neon-pink);
+  text-shadow: var(--glow-pink);
+}
+
+/* --- 2. CSS GRID LAYOUT (Macroestrutura) --- */
+/* Mobile First: Apenas 1 coluna */
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-lg);
+  padding: var(--espaco-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Desktop: 3 colunas (Conteúdo principal pega 2/3 do espaço) */
+@media (min-width: 900px) {
+  .page-wrapper {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "cabecalho cabecalho"
+      "conteudo sidebar";
+    padding: var(--espaco-lg);
+  }
+
+  .intro {
+    grid-area: cabecalho;
+  }
+
+  .main {
+    grid-area: conteudo;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+  }
+}
+
+/* --- ESTILIZANDO OS BLOCOS (Com Flexbox e Grid) --- */
+
+/* Cabeçalho / Intro */
+.intro {
+  text-align: center;
+  border-bottom: 2px solid var(--neon-blue);
+  padding-bottom: var(--espaco-lg);
+  margin-bottom: var(--espaco-lg);
+  animation: fade-in 1s ease-out; /* Bônus: Animação */
+}
+
+.intro h1 {
+  font-size: 3rem;
+  color: var(--neon-pink);
+  text-shadow: var(--glow-pink);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.intro h2 {
+  font-size: 1.2rem;
+  color: var(--neon-blue);
+  margin-bottom: var(--espaco-lg);
+}
+
+/* Seções de Texto (Flexbox interno) */
+.preamble,
+.explanation,
+.participation {
+  background-color: var(--bg-panel);
+  padding: var(--espaco-md);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--neon-blue);
+  margin-bottom: var(--espaco-md);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Efeito Hover nos blocos */
+.preamble:hover,
+.explanation:hover,
+.participation:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow-blue);
+  border-left-color: var(--neon-pink);
+}
+
+/* --- 3. FLEXBOX NA SIDEBAR --- */
+.sidebar .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+}
+
+.design-selection,
+.zen-resources {
+  background-color: var(--bg-panel);
+  padding: var(--espaco-md);
+  border-radius: var(--border-radius);
+  border-top: 4px solid var(--neon-pink);
+}
+
+.sidebar h3 {
+  color: var(--neon-pink);
+  border-bottom: 1px dashed var(--text-main);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  /* Usando Flexbox para organizar os itens das listas */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.sidebar li {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.sidebar li:hover {
+  background: rgba(0, 243, 255, 0.1);
+}
+
+/* --- FOOTER FLEXBOX --- */
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: var(--espaco-lg);
+  padding-top: var(--espaco-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- ANIMAÇÕES (BÔNUS) --- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

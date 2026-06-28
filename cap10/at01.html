@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PWEB1 — Cap. 10 AT01 — Recriação Responsiva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="at01.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+            <path
+              d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.894-.982-.336.075-.668-.135-.744-.47-.076-.336.135-.668.47-.743 3.856-.88 7.15-.51 9.822 1.13.296.18.387.563.206.858zm1.225-2.72c-.227.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.08-1.182-.413.125-.847-.107-.972-.52-.125-.413.108-.847.52-.972 3.67-1.114 8.243-.574 11.345 1.33.37.227.49.707.262 1.073zm.105-2.834C14.43 8.78 8.65 8.59 5.3 9.607c-.512.155-1.053-.135-1.21-.647-.154-.513.136-1.054.648-1.21 3.844-1.167 10.224-.943 14.28 1.464.46.273.61.87.337 1.33-.273.46-.87.61-1.33.337z"
+            />
+          </svg>
+          <span>Spotify Clone</span>
+        </div>
+        <nav class="nav" aria-label="Navegação Principal">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="../index.html" class="nav__link">Premium</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Suporte</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Baixar</a></li>
+            <li class="nav__item nav__item--divisor">|</li>
+            <li class="nav__item">
+              <a href="#" class="nav__link nav__link--destaque">Inscrever-se</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link nav__link--destaque">Entrar</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">Música para todos os momentos.</h1>
+          <p class="hero__subtitle">
+            Milhões de músicas e podcasts para explorar. E nem precisa de cartão
+            de crédito.
+          </p>
+          <a href="#" class="hero__btn">Obter o Spotify Free</a>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="content-section__container">
+          <h2 class="content-section__title">Escolha a sua vibe</h2>
+
+          <div class="grid-cards">
+            <article class="card">
+              <div class="card__image-wrapper">
+                <img
+                  src="https://picsum.photos/400/400?random=1"
+                  alt="Capa de Playlist Pop"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__body">
+                <h3 class="card__title">Top Hits Portugal</h3>
+                <p class="card__text">
+                  Os maiores sucessos que não param de tocar no país inteiro.
+                </p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__image-wrapper">
+                <img
+                  src="https://picsum.photos/400/400?random=2"
+                  alt="Capa de Playlist Chill"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__body">
+                <h3 class="card__title">Chill Vibes</h3>
+                <p class="card__text">
+                  Músicas relaxantes para descontrair o seu fim de dia.
+                </p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__image-wrapper">
+                <img
+                  src="https://picsum.photos/400/400?random=3"
+                  alt="Capa de Playlist Treino"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__body">
+                <h3 class="card__title">Beats de Foco</h3>
+                <p class="card__text">
+                  Instrumentais eletrónicos perfeitos para programar e estudar.
+                </p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__image-wrapper">
+                <img
+                  src="https://picsum.photos/400/400?random=4"
+                  alt="Capa de Playlist Alternativo"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__body">
+                <h3 class="card__title">Descobertas Semanais</h3>
+                <p class="card__text">
+                  A sua dose semanal de novos artistas e faixas personalizadas.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <p class="footer__text">
+          &copy; 2026 Spotify Clone — Atividade Prática de Engenharia Reversa.
+        </p>
+        <p class="footer__author">Desenvolvido por: Cauê Nairan Ferreira</p>
+      </div>
+    </footer>
+  </body>
+</html>

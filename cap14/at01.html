@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Acadêmico Interativo - AT14</title>
+    <link rel="stylesheet" href="at01.css" />
+  </head>
+  <body class="tema-claro">
+    <header>
+      <h1>Painel Acadêmico Interativo</h1>
+      <p><a href="../index.html">← Voltar para a página principal</a></p>
+    </header>
+
+    <main class="container">
+      <section class="card" id="perfil-card">
+        <h2>Perfil do Estudante</h2>
+        <img
+          src="imagens/fotooriginal.png"
+          alt="Foto do Perfil"
+          id="foto-perfil"
+        />
+
+        <div class="info">
+          <p>
+            <strong>Nome:</strong>
+            <span id="nome-perfil">Cauê Nairan Ferreira</span>
+          </p>
+          <p>
+            <strong>Curso:</strong>
+            <span id="curso-perfil">Sistemas de Informação</span>
+          </p>
+        </div>
+
+        <div class="acoes-perfil">
+          <button id="btn-alterar-nome">Alterar Nome</button>
+          <button id="btn-alterar-curso">Alterar Curso</button>
+          <button id="btn-alterar-foto">Alterar Foto</button>
+          <button id="btn-destacar">Destacar Perfil</button>
+          <button id="btn-restaurar">Restaurar Perfil</button>
+        </div>
+      </section>
+
+      <div class="painel-lateral">
+        <section class="card">
+          <h2>Preferências Visuais</h2>
+
+          <div class="controle">
+            <label for="select-tema">Tema da Página:</label>
+            <select id="select-tema">
+              <option value="tema-claro">Claro</option>
+              <option value="tema-escuro">Escuro</option>
+              <option value="tema-azul">Azul</option>
+            </select>
+          </div>
+
+          <div class="controle">
+            <label for="range-fonte"
+              >Tamanho da Fonte (Biografia):
+              <span id="valor-fonte">16px</span></label
+            >
+            <input type="range" id="range-fonte" min="12" max="30" value="16" />
+          </div>
+
+          <div class="controle">
+            <label>
+              <input type="checkbox" id="check-biografia" checked />
+              Exibir Biografia
+            </label>
+          </div>
+
+          <div id="texto-biografia">
+            <p>
+              Sou estudante de Sistemas de Informação no IFAL, apaixonado por
+              tecnologia, matemática e desenvolvimento front-end.
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Contato e Resumo</h2>
+
+          <div class="form-grupo">
+            <label for="input-email">Novo E-mail:</label>
+            <input
+              type="email"
+              id="input-email"
+              placeholder="email@exemplo.com"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="input-telefone">Novo Telefone:</label>
+            <input
+              type="text"
+              id="input-telefone"
+              placeholder="(82) 90000-0000"
+            />
+          </div>
+
+          <button id="btn-atualizar-contato">Atualizar Contato</button>
+
+          <div class="resumo-contato">
+            <h3>Informações de Contato</h3>
+            <p>
+              <strong>E-mail:</strong>
+              <span id="resumo-email">caue.nairan@gmail.com</span>
+            </p>
+            <p>
+              <strong>Telefone:</strong>
+              <span id="resumo-telefone">(82) 99171-7361</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="card stats">
+          <h2>Estatísticas da Sessão</h2>
+          <p>
+            Total de ações realizadas: <strong id="contador-acoes">0</strong>
+          </p>
+          <p>Última ação: <strong id="ultima-acao">Nenhuma</strong></p>
+        </section>
+      </div>
+    </main>
+
+    <script src="at01.js"></script>
+  </body>
+</html>

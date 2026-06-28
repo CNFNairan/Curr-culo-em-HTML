@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PWEB1 Cap. 07 AT05 Mini Design System</title>
+    <link rel="stylesheet" href="at05-style.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <h1 class="hero__titulo">Aurora Design System</h1>
+      <p class="hero__subtitulo">
+        Um conjunto de componentes modernos, reutilizáveis e escaláveis.
+      </p>
+      <a href="#documentacao" class="btn btn--primario hero__cta"
+        >Explorar Componentes</a
+      >
+    </section>
+
+    <main class="container" id="documentacao">
+      <a
+        href="../index.html"
+        class="btn btn--secundario"
+        style="margin-bottom: var(--espaco-lg)"
+        >← Voltar à Página Principal</a
+      >
+
+      <section>
+        <h2 class="seccao-titulo">Cores (Design Tokens)</h2>
+        <table class="tabela-cores">
+          <thead>
+            <tr>
+              <th>Visualização</th>
+              <th>Nome / Variável</th>
+              <th>Uso Recomendado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="celula-cor" style="background-color: #4f46e5"></div>
+              </td>
+              <td>
+                <strong>Primária</strong><br /><code>--cor-primaria</code>
+              </td>
+              <td>Botões principais, links ativos, destaques da marca.</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="celula-cor" style="background-color: #8b5cf6"></div>
+              </td>
+              <td>
+                <strong>Secundária</strong><br /><code>--cor-secundaria</code>
+              </td>
+              <td>Elementos complementares e backgrounds secundários.</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="celula-cor" style="background-color: #10b981"></div>
+              </td>
+              <td><strong>Sucesso</strong><br /><code>--cor-sucesso</code></td>
+              <td>Validação de formulários e mensagens positivas.</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="celula-cor" style="background-color: #ef4444"></div>
+              </td>
+              <td><strong>Erro</strong><br /><code>--cor-erro</code></td>
+              <td>Ações destrutivas e feedback de erro.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2 class="seccao-titulo">Botões</h2>
+        <div
+          style="
+            display: flex;
+            gap: var(--espaco-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--espaco-lg);
+          "
+        >
+          <button class="btn btn--primario">Ação Principal</button>
+          <button class="btn btn--secundario">Ação Secundária</button>
+          <button class="btn btn--perigo">Ação Destrutiva</button>
+          <button class="btn btn--primario" disabled>Desabilitado</button>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="seccao-titulo">Cartões</h2>
+        <article class="card">
+          <span class="card__badge">Destaque</span>
+          <div class="card__imagem"></div>
+          <div class="card__corpo">
+            <h3 class="card__titulo">Design System na Prática</h3>
+            <p class="card__texto">
+              Descubra como estruturar e documentar componentes isolados
+              utilizando metodologias como BEM no CSS.
+            </p>
+            <a class="card__link" href="#">Saiba mais →</a>
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <h2 class="seccao-titulo">Formulários</h2>
+        <form class="form" novalidate>
+          <div class="form__grupo">
+            <label class="form__label" for="nome">Nome Completo</label>
+            <input
+              class="form__input"
+              type="text"
+              id="nome"
+              required
+              placeholder="Ex: Maria Silva"
+            />
+          </div>
+
+          <div class="form__grupo">
+            <label class="form__label" for="email">Endereço de E-mail</label>
+            <input
+              class="form__input"
+              type="email"
+              id="email"
+              required
+              placeholder="maria@exemplo.com"
+            />
+            <span class="form__mensagem-erro"
+              >Por favor, insira um e-mail válido.</span
+            >
+          </div>
+
+          <div class="form__grupo">
+            <label class="form__label" for="assunto">Assunto (Opcional)</label>
+            <input
+              class="form__input"
+              type="text"
+              id="assunto"
+              placeholder="Dúvida comercial"
+            />
+          </div>
+
+          <button type="submit" class="btn btn--primario form__botao">
+            Submeter Pedido
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

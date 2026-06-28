@@ -1,0 +1,232 @@
+@import url("at05-reset.css");
+@import url("at05-variables.css");
+
+/* ─── Configurações Gerais ─────────────────────── */
+body {
+  font-family: var(--fonte-base);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+.container {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-xl) var(--espaco-md);
+}
+.seccao-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-h2);
+  margin-bottom: var(--espaco-lg);
+  border-bottom: 2px solid var(--cor-fundo-alt);
+  padding-bottom: var(--espaco-sm);
+}
+
+/* ─── Componente 1: Hero ───────────────────────── */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--espaco-md);
+  /* Múltiplos backgrounds combinando gradiente semitransparente e imagem com URL genérica */
+  background-image:
+    linear-gradient(rgba(31, 41, 55, 0.8), rgba(79, 70, 229, 0.8)),
+    url("https://picsum.photos/1920/1080");
+  background-size: cover;
+  background-position: center;
+  color: var(--cor-texto-claro);
+}
+.hero__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-display);
+  margin-bottom: var(--espaco-md);
+}
+.hero__subtitulo {
+  font-size: var(--texto-h3);
+  margin-bottom: var(--espaco-lg);
+  max-width: 600px;
+}
+.hero__cta {
+  margin-top: var(--espaco-md);
+}
+
+/* ─── Componente 2: Botões (BEM) ────────────────── */
+.btn {
+  display: inline-block;
+  padding: var(--espaco-sm) var(--espaco-lg);
+  border: none;
+  border-radius: var(--raio-sm);
+  font-size: var(--texto-base);
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition:
+    background-color var(--transicao),
+    transform var(--transicao);
+}
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+.btn--primario {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+}
+.btn--primario:hover:not(:disabled) {
+  background-color: var(--cor-secundaria);
+}
+.btn--secundario {
+  background-color: transparent;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+}
+.btn--secundario:hover:not(:disabled) {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+}
+.btn--perigo {
+  background-color: var(--cor-erro);
+  color: var(--cor-texto-claro);
+}
+.btn--perigo:hover:not(:disabled) {
+  background-color: #b91c1c; /* vermelho escuro */
+}
+
+/* ─── Componente 3: Cartão (BEM) ────────────────── */
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-md);
+  overflow: hidden;
+  max-width: 350px;
+  margin-bottom: var(--espaco-md);
+}
+.card__badge {
+  position: absolute;
+  top: var(--espaco-md);
+  right: var(--espaco-md);
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto-claro);
+  padding: var(--espaco-xs) var(--espaco-sm);
+  border-radius: var(--raio-sm);
+  font-size: var(--texto-xs);
+  font-weight: bold;
+  z-index: 10;
+}
+.card__imagem {
+  height: 200px;
+  background-color: var(--cor-secundaria);
+}
+.card__corpo {
+  padding: var(--espaco-md);
+}
+.card__titulo {
+  font-size: var(--texto-h3);
+  margin-bottom: var(--espaco-sm);
+}
+.card__texto {
+  font-size: var(--texto-sm);
+  color: #4b5563;
+  margin-bottom: var(--espaco-md);
+}
+.card__link {
+  color: var(--cor-primaria);
+  font-weight: bold;
+  text-decoration: none;
+}
+.card__link:hover {
+  text-decoration: underline;
+}
+
+/* ─── Componente 4: Tabela de Tokens ────────────── */
+.tabela-cores {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espaco-lg);
+  background-color: #fff;
+  box-shadow: var(--sombra-sm);
+}
+.tabela-cores th,
+.tabela-cores td {
+  padding: var(--espaco-md);
+  border: 1px solid var(--cor-fundo-alt);
+  text-align: left;
+}
+.tabela-cores th {
+  background-color: var(--cor-fundo-alt);
+}
+.tabela-cores tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+.celula-cor {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--raio-sm);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ─── Componente 5: Formulário (BEM) ────────────── */
+.form {
+  background-color: #fff;
+  padding: var(--espaco-lg);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-sm);
+  max-width: 500px;
+}
+.form__grupo {
+  margin-bottom: var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+}
+.form__label {
+  font-weight: bold;
+  margin-bottom: var(--espaco-xs);
+  font-size: var(--texto-sm);
+}
+.form__input {
+  padding: var(--espaco-sm);
+  border: 1px solid #d1d5db;
+  border-radius: var(--raio-sm);
+  transition:
+    border-color var(--transicao),
+    box-shadow var(--transicao);
+}
+.form__input::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+.form__input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+.form__input:required {
+  border-left: 4px solid var(--cor-destaque);
+}
+.form__input:valid:not(:placeholder-shown) {
+  border-color: var(--cor-sucesso);
+}
+.form__input:invalid:not(:placeholder-shown) {
+  border-color: var(--cor-erro);
+}
+.form__mensagem-erro {
+  font-size: var(--texto-xs);
+  color: var(--cor-erro);
+  margin-top: var(--espaco-xs);
+  display: none; /* Seria ativado via JS num cenário real */
+}
+.form__botao {
+  width: 100%;
+  margin-top: var(--espaco-sm);
+}

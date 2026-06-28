@@ -1,0 +1,160 @@
+/* Requisitos de variáveis CSS globais */
+:root {
+  --cor-primaria: #2980b9;
+  --cor-fundo: #fdfdfd;
+  --cor-texto: #333333;
+  --altura-nav: 60px;
+  --espaco-md: 1rem;
+  --espaco-lg: 2rem;
+  --raio-borda: 8px;
+  --raio-circulo: 9999px;
+  --z-nav: 1000;
+  --z-sticky: 100;
+  --z-btn-topo: 999;
+  --z-tooltip: 500;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  /* Espaço no topo para evitar que a nav esconda o conteúdo inicial */
+  padding-top: calc(var(--altura-nav) + var(--espaco-lg));
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--espaco-md);
+}
+
+/* 1. Barra de navegação fixa */
+.nav-fixa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--altura-nav);
+  background-color: var(--cor-primaria);
+  color: #fff;
+  z-index: var(--z-nav);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--espaco-lg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-fixa a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-fixa ul {
+  list-style: none;
+  display: flex;
+  gap: var(--espaco-md);
+}
+
+/* 2. Cabeçalho sticky */
+.titulo-sticky {
+  position: sticky;
+  top: var(--altura-nav);
+  z-index: var(--z-sticky);
+  background-color: var(--cor-fundo);
+  padding: var(--espaco-md) 0;
+  border-bottom: 2px solid var(--cor-primaria);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* 3. Selo de destaque em cartão absoluto/relativo */
+.cartao-destaque {
+  position: relative;
+  background-color: #ecf0f1;
+  padding: var(--espaco-lg);
+  border: 2px solid var(--cor-primaria);
+  border-radius: var(--raio-borda);
+  margin: var(--espaco-lg) 0;
+}
+
+.selo {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: var(--raio-circulo);
+  font-weight: bold;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Botão Voltar ao Topo */
+.btn-topo {
+  position: fixed;
+  bottom: var(--espaco-lg);
+  right: var(--espaco-lg);
+  z-index: var(--z-btn-topo);
+  width: 60px;
+  height: 60px;
+  border-radius: var(--raio-circulo);
+  background-color: var(--cor-primaria);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn-topo:hover {
+  transform: scale(1.1);
+}
+
+/* 5. Tooltip com visibility */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  color: var(--cor-primaria);
+  font-weight: bold;
+  border-bottom: 1px dashed var(--cor-primaria);
+}
+
+.tooltip-texto {
+  visibility: hidden;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem var(--espaco-md);
+  border-radius: var(--raio-borda);
+  white-space: nowrap;
+  z-index: var(--z-tooltip);
+  font-size: 0.85rem;
+  font-weight: normal;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+}
+
+.tooltip-container:hover .tooltip-texto {
+  visibility: visible;
+  opacity: 1;
+}
