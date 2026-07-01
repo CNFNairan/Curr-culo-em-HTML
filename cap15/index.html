@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscrição de Alunos - Cap 15</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Formulário de Inscrição - IFAL</h1>
+      <p><a href="../index.html">← Voltar à página principal</a></p>
+    </header>
+
+    <main class="container">
+      <form id="formCadastro" novalidate>
+        <fieldset>
+          <legend>Dados Pessoais</legend>
+
+          <div class="form-group">
+            <label for="nome">Nome completo: *</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              minlength="3"
+              placeholder="Digite seu nome completo"
+            />
+            <span class="erro" id="erro-nome"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail: *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="exemplo@email.com"
+            />
+            <span class="erro" id="erro-email"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone: *</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              required
+              placeholder="(82) 99999-9999"
+              maxlength="15"
+            />
+            <span class="erro" id="erro-telefone"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="data_nascimento">Data de nascimento: *</label>
+            <input
+              type="date"
+              id="data_nascimento"
+              name="data_nascimento"
+              required
+            />
+            <span class="erro" id="erro-data"></span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dados Acadêmicos</legend>
+
+          <div class="form-group">
+            <label for="curso">Curso pretendido: *</label>
+            <select id="curso" name="curso" required>
+              <option value="">Selecione um curso...</option>
+              <option value="si">Sistemas de Informação</option>
+              <option value="cc">Ciência da Computação</option>
+              <option value="ec">Engenharia da Computação</option>
+            </select>
+            <span class="erro" id="erro-curso"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Turno: *</label>
+            <div class="radio-group">
+              <label
+                ><input type="radio" name="turno" value="Matutino" required />
+                Matutino</label
+              >
+              <label
+                ><input type="radio" name="turno" value="Vespertino" />
+                Vespertino</label
+              >
+              <label
+                ><input type="radio" name="turno" value="Noturno" />
+                Noturno</label
+              >
+            </div>
+            <span class="erro" id="erro-turno"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Áreas de interesse (Mínimo 2): *</label>
+            <div class="checkbox-group" id="interesses-group">
+              <label
+                ><input type="checkbox" name="interesses" value="Front-end" />
+                Front-end</label
+              >
+              <label
+                ><input type="checkbox" name="interesses" value="Back-end" />
+                Back-end</label
+              >
+              <label
+                ><input type="checkbox" name="interesses" value="IA" />
+                Inteligência Artificial</label
+              >
+              <label
+                ><input type="checkbox" name="interesses" value="Dados" /> Banco
+                de Dados</label
+              >
+            </div>
+            <span class="erro" id="erro-interesses"></span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Segurança e Mídia</legend>
+
+          <div class="form-group">
+            <label for="senha">Senha: *</label>
+            <div class="senha-container">
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                required
+                minlength="8"
+                placeholder="Crie uma senha forte"
+              />
+              <button type="button" id="btn-mostrar-senha" class="btn-toggle">
+                Mostrar
+              </button>
+            </div>
+            <div class="forca-senha" id="forca-senha">
+              Força da senha: <span>Fraca</span>
+            </div>
+            <span class="erro" id="erro-senha"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmar_senha">Confirmar senha: *</label>
+            <input
+              type="password"
+              id="confirmar_senha"
+              name="confirmar_senha"
+              required
+            />
+            <span class="erro" id="erro-confirmar-senha"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="foto">Foto de Perfil (Opcional - Máx 2MB):</label>
+            <input
+              type="file"
+              id="foto"
+              name="foto"
+              accept="image/jpeg, image/png"
+            />
+            <div id="preview-container">
+              <img id="preview-img" src="" alt="Preview da foto" />
+            </div>
+            <span class="erro" id="erro-foto"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem de apresentação: *</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              required
+              minlength="50"
+              maxlength="500"
+              rows="5"
+              placeholder="Fale um pouco sobre você e por que escolheu o curso..."
+            ></textarea>
+            <div class="contador">
+              <span id="char-count">0</span>/500 caracteres
+            </div>
+            <span class="erro" id="erro-mensagem"></span>
+          </div>
+        </fieldset>
+
+        <div class="form-group termos">
+          <label>
+            <input type="checkbox" id="termos" name="termos" required />
+            Li e aceito os termos e condições do processo seletivo. *
+          </label>
+          <span class="erro" id="erro-termos"></span>
+        </div>
+
+        <div class="acoes">
+          <button type="submit" id="btn-enviar">Enviar Inscrição</button>
+          <button type="reset" id="btn-limpar">Limpar Dados</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="js/util.js"></script>
+    <script src="js/validacoes.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

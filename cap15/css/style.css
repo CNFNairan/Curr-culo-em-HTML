@@ -1,0 +1,184 @@
+:root {
+  --primaria: #2c3e50;
+  --sucesso: #27ae60;
+  --erro: #e74c3c;
+  --fundo: #f8f9fa;
+  --borda: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--fundo);
+  color: #333;
+}
+
+header {
+  background-color: var(--primaria);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header a {
+  color: #3498db;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+  border: 1px solid var(--borda);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--primaria);
+  padding: 0 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  outline: none;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+/* UX: Destaque para campos válidos e inválidos */
+input.valido,
+select.valido,
+textarea.valido {
+  border-color: var(--sucesso);
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
+}
+
+input.invalido,
+select.invalido,
+textarea.invalido {
+  border-color: var(--erro);
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+}
+
+.erro {
+  color: var(--erro);
+  font-size: 0.85em;
+  display: block;
+  margin-top: 5px;
+  min-height: 16px;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.radio-group label,
+.checkbox-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Senha e Toggle */
+.senha-container {
+  display: flex;
+  gap: 10px;
+}
+.btn-toggle {
+  padding: 10px;
+  background: #eee;
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.forca-senha {
+  font-size: 0.85em;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* Preview Imagem */
+#preview-container {
+  margin-top: 10px;
+  display: none;
+}
+#preview-img {
+  max-width: 150px;
+  border-radius: 5px;
+  border: 2px solid var(--primaria);
+}
+
+/* Contador */
+.contador {
+  font-size: 0.85em;
+  text-align: right;
+  color: #666;
+}
+
+/* Botões */
+.acoes {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+button[type="submit"],
+button[type="reset"] {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+button[type="submit"] {
+  background-color: var(--sucesso);
+}
+button[type="submit"]:hover {
+  background-color: #219653;
+}
+
+button[type="reset"] {
+  background-color: #7f8c8d;
+}
+button[type="reset"]:hover {
+  background-color: #95a5a6;
+}
